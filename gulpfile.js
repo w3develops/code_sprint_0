@@ -33,6 +33,12 @@ const config = {
         dest: "public/js/",
         watch: "src/front/js/**/*.*",
     },
+    module: {
+        src: "src/modules/**/*.*",
+        dest: "public/js/",
+        dest2: "lib",
+        watch: "src/modules/**/*.*",
+    },
     assets: {
         src: "",
         dest: "",
@@ -87,8 +93,14 @@ gulp.task('styles', function(callback) {
 });
 
 gulp.task('scripts', function(callback) {
-    return gulp.src(config.scripts.src, {since: gulp.lastRun('assets')})
+    return gulp.src(config.scripts.src, {since: gulp.lastRun('scripts')})
         .pipe(gulp.dest(config.scripts.dest));
+});
+
+gulp.task('modules', function(callback) {
+    return gulp.src(config.module.src, {since: gulp.lastRun('modules')})
+        .pipe(gulp.dest(config.module.dest))
+        .pipe(gulp.dest(config.module.dest2));
 });
 
 gulp.task('assets', function(callback) {
@@ -101,10 +113,11 @@ gulp.task('watch', function() {
     gulp.watch(config.html.watch, gulp.series('html'));
     gulp.watch(config.styles.watch, gulp.series('styles'));
     gulp.watch(config.scripts.watch, gulp.series('scripts'));
+    gulp.watch(config.module.watch, gulp.series('modules'));
   //  gulp.watch(config.assets.watch, gulp.series('assets'));
 });
 
-gulp.task('build', gulp.series('clear', gulp.parallel('html', 'styles', 'scripts')));
+gulp.task('build', gulp.series('clear', gulp.parallel('html', 'styles', 'scripts', 'modules')));
 
 gulp.task('serve', function() {
 	browserSync.init({
