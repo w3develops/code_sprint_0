@@ -4,8 +4,8 @@
 
 _GET_ `/api/quote`
 
-Response:
----
+### Response:
+
 ```json
 {
   "id": "inner id",
@@ -18,8 +18,7 @@ Response:
 
 _POST_ `/api/quiz`
 
-Payload:
----
+### Payload:
 
 ```json
 {
@@ -31,8 +30,7 @@ Payload:
 
 _GET_ `/api/quiz/languages?area[]=%area`
 
-Response:
----
+### Response:
 
 ```json
 {
@@ -48,8 +46,7 @@ Response:
 
 _GET_ `/api/quiz/framevork?lang[]=%languages`
 
-Response:
----
+### Response:
 
 ```json
 {
@@ -67,8 +64,7 @@ Response:
 
 _POST_ `/api/calculator`
 
-Payload:
----
+### Payload:
 
 ```json
 {
@@ -76,9 +72,7 @@ Payload:
 }
 ```
 
-Response:  
----  
-
+### Response: 
 
 ```json
 {
