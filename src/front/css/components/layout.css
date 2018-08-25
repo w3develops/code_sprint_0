@@ -1,0 +1,19 @@
+body {
+	margin: 0;
+	color: #222;
+	background: linear-gradient(to bottom, #55c, #ddf);
+}
+
+header {
+	background: #ccc;
+}
+
+footer {
+	background: #999;
+	color: #ccc;
+}
+
+section {
+	margin: 0 0 20px;
+	background: #fff;
+}
