@@ -3,9 +3,9 @@
 const sprintEcho = require('./lib/echo');
 const quizData = require('./data/dbquiz');
 const quoteData = require('./data/dbquote');
-const quiz;
-const quote;
-const coffeCupCalculator;
+const quiz = () => {};
+const quote = () => {};
+const coffeCupCalculator = () => {};
 
 module.exports = function (app) {
 	// http://expressjs.com/en/starter/basic-routing.html
