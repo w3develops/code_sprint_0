@@ -3,9 +3,9 @@
 const sprintEcho = require('./lib/echo');
 const quizData = require('./data/dbquiz');
 const quoteData = require('./data/dbquote');
-const quiz = () => {};
-const quote = () => {};
-const coffeCupCalculator = () => {};
+const quizFilter = require('./lib/quiz-filter')(quizData);
+const quote = require('./lib/quote')(quoteData);
+const coffeCupCalculator = require('./lib/calculator');
 
 module.exports = function (app) {
 	// http://expressjs.com/en/starter/basic-routing.html
@@ -45,5 +45,7 @@ module.exports = function (app) {
 	app.get('/api/quote', quote);
 
 	app.post('/api/calculator', coffeCupCalculator);
+
+	app.get('/api/quiz/filter', quizFilter);
 
 }
