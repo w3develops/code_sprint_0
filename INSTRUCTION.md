@@ -15,20 +15,20 @@ npm install -g gulp@4.0.0
 
 ## Init
 
-Clone repo
+1) Clone repo
 
 ```
-git clone https://github.com/w3develops/code_sprint_0
+git clone --branch dev https://github.com/w3develops/code_sprint_0
 ```
 
-Go to project folder and run
+2) Go to project folder and run
 
 ```
-git pull -u origin dev
-git checkout dev
+cd code_sprint_0
+git pull
 ```
 
-Install project dependencies
+3) Install project dependencies
 
 ```
 npm i
@@ -36,7 +36,8 @@ npm i
 
 ## Start dev proccess
 
-Goto development branch and fetch latest changes
+Goto development branch and fetch latest changes  
+
 ```
 git checkout dev
 git pull
@@ -77,7 +78,7 @@ git checkout -m "{Commit description}"
 After you end task push it on repo
 
 ```
-git push origin {task-name}
+git push -u origin {task-name}
 ```
 
 example `git push origin task-doc-instructions`
